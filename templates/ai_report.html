@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>ExamGuard - AI Integrity Report</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #b3e5fc);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .report-box {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0878c9;
+            margin-bottom: 35px;
+            font-size: 30px;
+        }
+
+        .report {
+            background: #f8fbff;
+            border: 1px solid #d9eaf7;
+            border-radius: 12px;
+            padding: 30px;
+            white-space: pre-wrap;
+            line-height: 1.7;
+            font-size: 15px;
+            color: #222;
+        }
+
+        .back-button {
+            display: block;
+            width: 240px;
+            margin: 30px auto 0;
+            padding: 13px;
+            text-align: center;
+            background: #0878c9;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-button:hover {
+            background: #0565a8;
+            transform: translateY(-1px);
+        }
+
+
+
+
+        .download-button {
+        display: block;
+        width: 240px;
+        margin: 25px auto 0;
+        padding: 13px;
+        text-align: center;
+        background: #0878c9;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: .2s;
+        }
+
+        .download-button:hover {
+            background: #0565a8;
+            transform: translateY(-1px);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="report-box">
+
+        <h1>🛡 ExamGuard AI Integrity Report</h1>
+
+        <div class="report">
+{{ report }}
+        </div>
+
+
+        <a href="{{ url_for('export_ai_report', username=username) }}" class="download-button">
+            📥 Download AI Report
+        </a>
+
+        <a
+            href="{{ url_for('invigilator') }}"
+            class="back-button"
+        >
+            Back to Invigilator Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
