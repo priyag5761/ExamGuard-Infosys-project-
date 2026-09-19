@@ -1,10 +1,5 @@
 import pandas as pd
 
-# from langchain_ollama import ChatOllama
-# from langchain_core.prompts import ChatPromptTemplate
-
-
-
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 
@@ -379,12 +374,6 @@ def generate_ai_report(student_name):
     # 9. CREATE LOCAL OLLAMA MODEL
     # ==========================================
 
-    # llm = ChatOllama(
-
-    #     model="qwen2.5:3b-instruct",
-
-    #     temperature=0
-    # )
     llm = ChatGoogleGenerativeAI(
     model="gemini-3.6-flash"
     )
